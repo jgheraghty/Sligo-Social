@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "267472607760",
+    "firebase_url": "https://sligo-social.firebaseio.com",
+    "project_id": "sligo-social",
+    "storage_bucket": "sligo-social.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267472607760:android:def10489ea8d0fa4",
+        "android_client_info": {
+          "package_name": "com.s00154277.joanne.sligo_social_mobile_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267472607760-n1kcdlo8r0or1t20mcumu6mti2udnpsv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.s00154277.joanne.sligo_social_mobile_app",
+            "certificate_hash": "15e3852557378d74c692ff9d70b4df173773d4fd"
+          }
+        },
+        {
+          "client_id": "267472607760-gne460fjdhcoup6m6bgbdck1i1q3u8ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8bFzYzqk4UA1WC0kawVb_KkdLvT9q5Lo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267472607760-gne460fjdhcoup6m6bgbdck1i1q3u8ip.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
