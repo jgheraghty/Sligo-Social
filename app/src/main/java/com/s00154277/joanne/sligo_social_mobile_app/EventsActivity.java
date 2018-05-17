@@ -4,6 +4,8 @@ import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -11,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.EventLog;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +21,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EventsActivity extends AppCompatActivity {
 
@@ -36,10 +42,64 @@ public class EventsActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    RecyclerView recyclerView;
+    EventsAdapter adapter;
+
+    List<Events> eventsList;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
+
+        eventsList = new ArrayList<>();
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        eventsList.add(
+                new Events(
+                        1,
+                        "Yeats' Festival 2018",
+                        "Some people, some poetry",
+                        R.drawable.yeats));
+
+        eventsList.add(
+                new Events(
+                        1,
+                        "LGBT",
+                        "Rainbow week in IT Sligo",
+                        R.drawable.lgbt));
+
+        eventsList.add(
+                new Events(
+                        1,
+                        "Grainne's 21st",
+                        "Join Grainne in the Garavogue Bar",
+                        R.drawable.garavogue));
+        eventsList.add(
+                new Events(
+                        1,
+                        "Harry Potter Marathon",
+                        "Non-stop Potter @ Sligo Cineplex",
+                        R.drawable.cinema));
+
+        eventsList.add(
+                new Events(
+                        1,
+                        "LGBT",
+                        "Drinks for Dan",
+                        R.drawable.lgbt));
+
+        eventsList.add(
+                new Events(
+                        1,
+                        "Student Day at the Races",
+                        "Wednesday, 24th September",
+                        R.drawable.races));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
