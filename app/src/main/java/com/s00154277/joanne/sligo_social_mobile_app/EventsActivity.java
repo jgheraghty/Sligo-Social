@@ -45,7 +45,7 @@ public class EventsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     EventsAdapter adapter;
 
-    List<Events> eventsList;
+    List<Events> eventList;
 
 
     @Override
@@ -53,53 +53,42 @@ public class EventsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
-        eventsList = new ArrayList<>();
+        eventList = new ArrayList<>();
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        eventsList.add(
+        eventList.add(
                 new Events(
                         1,
                         "Yeats' Festival 2018",
                         "Some people, some poetry",
                         R.drawable.yeats));
 
-        eventsList.add(
+        eventList.add(
                 new Events(
-                        1,
-                        "LGBT",
-                        "Rainbow week in IT Sligo",
-                        R.drawable.lgbt));
-
-        eventsList.add(
-                new Events(
-                        1,
+                        2,
                         "Grainne's 21st",
                         "Join Grainne in the Garavogue Bar",
-                        R.drawable.garavogue));
-        eventsList.add(
+                        R.drawable.bar));
+        eventList.add(
                 new Events(
-                        1,
+                        3,
                         "Harry Potter Marathon",
                         "Non-stop Potter @ Sligo Cineplex",
                         R.drawable.cinema));
 
-        eventsList.add(
-                new Events(
-                        1,
-                        "LGBT",
-                        "Drinks for Dan",
-                        R.drawable.lgbt));
-
-        eventsList.add(
+        eventList.add(
                 new Events(
                         1,
                         "Student Day at the Races",
                         "Wednesday, 24th September",
                         R.drawable.races));
+
+        adapter = new EventsAdapter(this, eventList);
+        recyclerView.setAdapter(adapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
